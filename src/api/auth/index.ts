@@ -1,11 +1,11 @@
 import { createMutationApi, createQueryApi } from '@/lib/api-client';
 import { AuthApi, Configuration } from '@/api/__spec';
 import { getUser } from '@/lib/auth';
-import { env } from 'process';
 
 const api = new AuthApi(
   new Configuration({
-    basePath: env.NEXT_PUBLIC_BACKEND_URL
+    // basePath: env.NEXT_PUBLIC_BACKEND_URL
+    basePath: 'https://clinic-backend.agencerdas.id'
   })
 );
 

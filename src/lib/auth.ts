@@ -4,7 +4,7 @@ import {
 } from '@/constants/auth';
 // import { cookies } from 'next/headers';
 import { getCookie, deleteCookie, setCookie } from 'cookies-next';
-import { env } from 'process';
+// import { env } from 'process';
 
 type JwtPayload = {
   sub: string; // user ID
@@ -110,15 +110,18 @@ const parseJwt = (token: string): JwtPayload => {
 const refreshToken = async () => {
   const refreshToken = await getCookie(AUTH_SESSION_COOKIE_NAME);
   if (!refreshToken) throw new Error('No refresh token');
-  const res = await fetch(`${env.NEXT_PUBLIC_BACKEND_URL}/api/auth/refresh`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      refresh_token: refreshToken
-    })
-  });
+  const res = await fetch(
+    `${'https://clinic-backend.agencerdas.id'}/api/auth/refresh`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        refresh_token: refreshToken
+      })
+    }
+  );
 
   if (!res.ok) throw new Error('Refresh failed');
 

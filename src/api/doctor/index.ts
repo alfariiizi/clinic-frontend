@@ -1,11 +1,11 @@
 import { createQueryApi } from '@/lib/api-client';
 import { Configuration, DoctorApi } from '../__spec';
 import { getValidAccessToken } from '@/lib/auth';
-import { env } from 'process';
 
 const api = new DoctorApi(
   new Configuration({
-    basePath: env.NEXT_PUBLIC_BACKEND_URL,
+    // basePath: env.NEXT_PUBLIC_BACKEND_URL,
+    basePath: 'https://clinic-backend.agencerdas.id',
     accessToken: async () => {
       const token = await getValidAccessToken().then((d) => d as string);
       return token;
