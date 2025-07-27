@@ -1,10 +1,10 @@
 {
-  "name": "next-shadcn-dashboard-starter",
+  "name": "clinic-agencerdas",
   "version": "1.0.0",
   "private": true,
   "author": {
-    "name": "Kiran",
-    "url": "https://github.com/Kiranism"
+    "name": "Alfarizi",
+    "url": "https://github.com/alfariiizi"
   },
   "scripts": {
     "dev": "next dev --turbopack",
@@ -15,7 +15,8 @@
     "lint:strict": "eslint --max-warnings=0 src",
     "format": "prettier --write .",
     "format:check": "prettier -c -w .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "gen:api": "openapi-generator-cli generate -i $SPEC_URL -g typescript-axios -o src/api/__spec"
   },
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts,css,less,scss,sass}": [
@@ -61,10 +62,12 @@
     "@sentry/nextjs": "^9.19.0",
     "@tabler/icons-react": "^3.31.0",
     "@tailwindcss/postcss": "^4.0.0",
+    "@tanstack/react-query": "^5.83.0",
     "@tanstack/react-table": "^8.21.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
+    "cookies-next": "^6.1.0",
     "date-fns": "^4.1.0",
     "eslint": "8.48.0",
     "eslint-config-next": "15.1.0",
@@ -100,6 +103,8 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^9.3.0",
+    "@openapitools/openapi-generator-cli": "^2.21.4",
+    "@tanstack/react-query-devtools": "^5.83.0",
     "@types/node": "22.10.2",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",

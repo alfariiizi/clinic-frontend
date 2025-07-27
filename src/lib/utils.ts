@@ -24,3 +24,17 @@ export function formatBytes(
       : (sizes[i] ?? 'Bytes')
   }`;
 }
+
+export function capitalize(str: string) {
+  // eslint-disable-next-line no-unsafe-optional-chaining
+  return (
+    str?.charAt(0)?.toUpperCase() + (str?.toLowerCase() || '')?.slice(1) || ''
+  );
+}
+
+export function capitalizeAll(str: string) {
+  return str
+    .split(' ')
+    .map((word) => capitalize(word))
+    .join(' ');
+}

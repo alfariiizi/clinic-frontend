@@ -15,7 +15,6 @@ import {
   IconLoader2,
   IconLogin,
   IconProps,
-  IconShoppingBag,
   IconMoon,
   IconDotsVertical,
   IconPizza,
@@ -30,7 +29,14 @@ import {
   IconUserX,
   IconX,
   IconLayoutKanban,
-  IconBrandGithub
+  IconBrandGithub,
+  IconUsers,
+  IconCalendarWeek,
+  IconStethoscope,
+  IconPackage,
+  IconDeviceMobile,
+  IconMessage,
+  IconTruckDelivery
 } from '@tabler/icons-react';
 
 export type Icon = React.ComponentType<IconProps>;
@@ -40,7 +46,15 @@ export const Icons = {
   logo: IconCommand,
   login: IconLogin,
   close: IconX,
-  product: IconShoppingBag,
+  // product: IconShoppingBag,
+  patient: IconUsers,
+  appointment: IconCalendarWeek,
+  clinicMember: IconStethoscope,
+  product: IconPackage,
+  order: IconTruckDelivery,
+  aiIntegration: IconDeviceMobile,
+  chat: IconMessage,
+  // billing: IconWallet,
   spinner: IconLoader2,
   kanban: IconLayoutKanban,
   chevronLeft: IconChevronLeft,

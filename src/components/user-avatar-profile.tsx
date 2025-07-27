@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { capitalize } from '@/lib/utils';
 
 interface UserAvatarProfileProps {
   className?: string;
@@ -7,6 +8,7 @@ interface UserAvatarProfileProps {
     imageUrl?: string;
     fullName?: string | null;
     emailAddresses: Array<{ emailAddress: string }>;
+    role?: string;
   } | null;
 }
 
@@ -29,6 +31,9 @@ export function UserAvatarProfile({
           <span className='truncate font-semibold'>{user?.fullName || ''}</span>
           <span className='truncate text-xs'>
             {user?.emailAddresses[0].emailAddress || ''}
+          </span>
+          <span className='truncate text-xs text-[10px]'>
+            {capitalize(user?.role || '')}
           </span>
         </div>
       )}
